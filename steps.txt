@@ -1,0 +1,35 @@
+apt-get install gcc
+apt-get install default-libmysqlclient-dev
+# pip install mysqlclient==2.0.1
+
+
+apt-get install libssl-dev libcurl4-openssl-dev
+# pip install pycurl==7.43.05
+
+pip install urllib3==1.25.9
+pip install --upgrade pip
+
+docker build -t python:3.7.7-slim-apt .
+
+docker save python:3.7.7-slim-apt > python_3.7.7_slim_apt.tar
+split -d -a 1 -b 40MB python_3.7.7_slim_apt.tar python_3.7.7_slim_apt_part_
+
+git add python_3.7.7_slim_apt_part_0 python_3.7.7_slim_apt_part_1
+git commit -m "python3.7.7"
+git push origin day2
+
+git add python_3.7.7_slim_apt_part_2 python_3.7.7_slim_apt_part_3
+git commit -m "python3.7.7"
+git push origin day2
+
+git add python_3.7.7_slim_apt_part_4 python_3.7.7_slim_apt_part_5
+git commit -m "python3.7.7"
+git push origin day2
+
+git add python_3.7.7_slim_apt_part_6 python_3.7.7_slim_apt_part_7
+git commit -m "python3.7.7"
+git push origin day2
+
+git add python_3.7.7_slim_apt_part_8
+git commit -m "python3.7.7"
+git push origin day2
